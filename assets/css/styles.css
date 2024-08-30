@@ -1,0 +1,287 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* grid */
+.gridContainer {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.2fr 0.2fr 2.6fr 2fr 0.6fr;
+  grid-template-areas: "header"
+                      "filtros"
+                      "categorias"
+                      "masVendidos"
+                      "footer";
+}
+
+.header {
+  grid-area: header;
+}
+
+.filtros {
+  grid-area: filtros;
+}
+
+.categorias {
+  grid-area: categorias;
+  background-color: #ffff
+}
+
+.recomendados {
+  grid-area: masVendidos;
+  background-color: #ffff
+}
+
+.footer {
+  grid-area: footer;
+}
+
+
+/* estilos header */
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #14213d; 
+  background-color: #fca311;
+}
+
+nav {
+  display: none;
+
+}
+nav li {
+  list-style: none;
+}
+
+nav li a {
+  text-decoration: none;
+  color: #14213d;
+}
+
+.menuHamburguesa {
+  font-size: 35px;
+}
+
+.carrito {
+  font-size: 30px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+/* sección filtros */
+
+.filtros {
+  background-color:  #ffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sección categoria de productos */
+
+.categorias {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+}
+
+.titulo {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px;
+  align-items: center;
+  background-color: #e5e5e5;
+  width: 100%;
+}
+
+.productos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  gap: 10px;
+  margin: 25px 10px;
+  padding: 15px;
+}
+
+.productos:hover {-webkit-transform:scale(1.0);transform:scale(1.2);}
+.productos {overflow: visible;}
+
+.productos img {
+  width: 250px;
+  height: 180px;
+  border-radius: 50%;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #14213d;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e5e5e5;
+  color: black;
+}
+
+/* estilos recomendados */
+
+.recomendados {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.containerMasVendidos {
+  padding: 20px 0px;
+  background-color: #e5e5e5;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.productosMasVendidos {
+display: flex;
+flex-direction: column;
+gap: 20px;
+} 
+
+.masVendidos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  margin: 15px 0px;
+  padding: 15px;
+  gap: 10px;
+  box-shadow: 1px 1px 8px black;  
+  }
+
+.masVendidos:hover {
+     filter: grayscale(50%);
+  }
+
+.masVendidos img {
+  width: 100%;
+}
+
+
+/* footer */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #14213d;
+  color: #fff;
+  justify-content: center;
+  padding: 20px 25px;
+  gap: 20px;
+
+}
+.redes {
+  display: flex;
+  margin-top: 25px;
+}
+
+.enlaceRedes {
+  width: 50px;
+  padding-left: 20px;
+}
+
+.redes img {
+  width: 100%;
+}
+
+
+/* 1er quiebre */
+
+@media (min-width: 576px) {
+
+  .gridContainer {
+    display: grid;
+    width: 100%;
+    background-color: #ffff;
+    grid-template-columns: auto auto;
+    grid-template-rows: 0.1fr 2.5fr 1.6fr 0.3fr;
+    grid-template-areas: "header filtros"
+                        "header categorias"
+                        "header masVendidos"
+                        "footer footer ";
+  }
+
+  .filtros {
+    padding: 30px;
+  }
+
+  .header {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: start;
+    background-color: #fca311;
+  }
+
+  .menuHamburguesa {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+  }
+
+  nav ul li {
+    margin-top: 20px;
+  }
+
+  nav ul li a {
+    transition: all 1s ease-in-out;
+  }
+
+  nav ul li a:hover {
+    color: #fff;
+    font-size: 38px;
+  }
+
+  nav a {
+    font-size: 30px;
+  }
+
+
+  .carrito {
+    display: none;
+  }
+
+  .logo {
+    flex-direction: column;
+    padding: 0px 10px;
+  }
+
+ .containerProductos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+ }
+
+ .productosMasVendidos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+ }
+
+ .footer {
+  flex-direction: row;
+  justify-content: space-between;
+ }
+
+  }
